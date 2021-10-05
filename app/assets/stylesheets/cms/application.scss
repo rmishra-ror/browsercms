@@ -1,6 +1,11 @@
 @charset "utf-8";
 
 $experimental-support-for-khtml: false;
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/css3/box";
+
 // Basic items for making modals work
 @import "bootstrap/mixins";
 @import "bootstrap/variables";
@@ -25,6 +30,12 @@ $experimental-support-for-khtml: false;
 @import 'cms/styles/_alerts';
 @import 'cms/styles/_modal';
 @import 'cms/styles/_glyph';
+
+
+/* IMPORTS JQUERY-UI CSS FROM GEM */
+@import "/assets/jquery.ui.core.css";
+@import "/assets/jquery.ui.datepicker.css";
+@import "/assets/jquery.ui.theme.css";
 
 
 

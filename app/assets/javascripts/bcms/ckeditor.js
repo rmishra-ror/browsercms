@@ -3,4 +3,7 @@
 //  See /assets/ckeditor/config.js for default configuration.
 //
 //= require rich
+//= require ckeditor-jquery
+//= require bcms/ckeditor_load
+//= require bcms/ckeditor_standard_config
 

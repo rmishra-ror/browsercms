@@ -11,7 +11,7 @@
 # Minor Issue:
 #   Error handling for Page not found behaves slightly differently than ContentController currently. If the user is logged
 #   in as an editor, they will get a 500 page rather than 404. This would require reworking how the error processing
-#   works in Cms::ContentRenderingSupport.
+#   works in Cms::ContentRenderingSupport. 
 module Cms
   module Acts
 
@@ -22,7 +22,7 @@ module Cms
       def cms_toolbar
         ""
       end
-
+      
       # If we are showing an error page, use that. Otherwise, just a blank page object that has a default title.
       def current_page
         super ? super : OpenStruct.new(page_title: controller.class.name.gsub("Controller", ""))
@@ -53,7 +53,7 @@ module Cms
       # Before filter that determines if the current user can access a specific section.
       def check_access_to_section
         user = current_user
-        logger.info "Checking that current_user '#{user.login}' has access to view section with path '#{self.class.in_section}'."
+        logger.warn "Checking that current_user '#{user.login}' has access to view section with path '#{self.class.in_section}'."
         unless user.able_to_view?(self.class.in_section)
           store_location
           raise Cms::Errors::AccessDenied
@@ -76,9 +76,9 @@ module Cms
         #   ...
         #
         def requires_permission_for_section(path, options={})
-          logger.info "Setting path #{path}"
+          logger.warn "Setting path #{path}"
           @section_path = path
-          before_filter :check_access_to_section, options
+          before_action :check_access_to_section, options
         end
 
         def in_section
