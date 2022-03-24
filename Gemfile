@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '2.5.8'
+ruby '2.6.0'
 
 # Load this project as a gem.
 gemspec
@@ -12,8 +12,8 @@ gem 'bluecloth', :groups=>[:development, :test] # For YARD
 
 gem "thin" # To avoid annoying Ruby 1.9.3/Rails/Webrick warnings - See http://stackoverflow.com/questions/7082364/what-does-warn-could-not-determine-content-length-of-response-body-mean-and-h
 
-gem 'sass-rails', '~>5.0.0'
-gem 'sprockets-rails', '~>2.3.1'
+gem 'sass-rails'
+gem 'sprockets-rails'
 
 # Uncomment to confirm that older versions work (for compaitiblity with Spree 2.2.4/bcms_spree)
 # gem 'paperclip', '~> 3.4.1'
@@ -42,14 +42,14 @@ group :test do
   gem 'poltergeist'
   gem 'm', '~> 1.2'
   gem 'single_test'
-  gem 'factory_girl_rails', '3.3.0'
+  gem 'factory_girl_rails'
   gem "mocha", :require=>false
   gem "sqlite3-ruby", :require => "sqlite3"
 
   # Cucumber and dependencies
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'cucumber-rails', '~> 1.4.1', :require=> false
+  gem 'cucumber-rails', :require=> false
   gem 'cucumber'
   gem 'launchy'
   gem 'ruby-prof'
