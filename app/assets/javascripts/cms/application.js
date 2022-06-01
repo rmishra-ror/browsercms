@@ -18,4 +18,5 @@
 //= require vendor/angular-sortable
 //= require ../angular/browsercms
 //= require_tree ../angular
+//= require_tree ../bcms
 
