@@ -43,7 +43,7 @@ Gem::Specification.new do |s|
   s.add_dependency("jquery-ui-rails", "6.0.1")
   s.add_dependency("paperclip", "6.0.0")
   s.add_dependency("panoramic")
-  s.add_dependency("will_paginate", "~>3.0.0")
+  s.add_dependency("will_paginate", "~>3.1.8")
   s.add_dependency("actionpack-page_caching", "~>1.0")
   s.add_dependency("simple_form")
 
