@@ -28,7 +28,11 @@ module Cms
     # Ideally, this could be improved if sprockets allows for dynamically determining which js library to use.
     # @return [String] Names of the JS file needed to load the editor.
     def cms_content_editor
-      "/assets/bcms/#{Cms.content_editor}"
+      if Rails.env.development? || Rails.env.test?
+        "/assets/bcms/#{Cms.content_editor}"
+      else
+        "bcms/#{Cms.content_editor}"
+      end
     end
 
     # Outputs the title for this page. Used by both internal CMS pages, as well as page templates. Call use_page_title to
