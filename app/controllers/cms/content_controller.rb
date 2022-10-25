@@ -22,12 +22,17 @@ module Cms
 
     # ----- Actions --------------------------------------------------------------
     def show
-      if @show_toolbar
-        render_editing_frame
-      else
-        render_page
+      begin
+        if @show_toolbar
+          render_editing_frame
+        else
+          render_page
+        end
+        cache_if_eligible
+      rescue => e
+        logger.debug "BrowserCMS Show action Exception: #{e.try(:message)}, backtace: #{e.backtrace}"
+        raise e
       end
-      cache_if_eligible
     end
 
     def show_page_route
