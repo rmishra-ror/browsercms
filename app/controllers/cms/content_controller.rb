@@ -30,7 +30,7 @@ module Cms
         end
         cache_if_eligible
       rescue => e
-        logger.info "BrowserCMS Show action Exception: #{e.try(:message)}, backtrace: #{e.backtrace.join("\n")}"
+        logger.error "BrowserCMS Show action Exception: #{e.try(:message)}, backtrace: #{e.backtrace.join("\n")}"
         raise
       end
     end
